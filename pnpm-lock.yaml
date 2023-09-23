@@ -5,9 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  particles.js:
-    specifier: ^2.0.0
-    version: 2.0.0
+  particlesjs:
+    specifier: ^2.2.3
+    version: 2.2.3
   typewriter-effect:
     specifier: ^2.21.0
     version: 2.21.0(react-dom@18.2.0)(react@18.2.0)
@@ -641,8 +641,8 @@ packages:
       wrappy: 1.0.2
     dev: true
 
-  /particles.js@2.0.0:
-    resolution: {integrity: sha512-8e0JIqkRbMMPlFBnF9f+92hX1s07jdkd3tqB8uHE9L+cwGGjIYjQM7QLgt0FQ5MZp6SFFYYDm/Y48pqK3ZvJOQ==}
+  /particlesjs@2.2.3:
+    resolution: {integrity: sha512-f0rL80Agqdsrnv/uhlLewv+LMdiXHu9MYPzMv0ZLPM06nLx3zmAXMH882fxqO6Uzb91csli8WlWaYd2XPN0d/Q==}
     dev: false
 
   /path-is-absolute@1.0.1:
