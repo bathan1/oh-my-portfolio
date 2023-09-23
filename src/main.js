@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  particlesJS.load("particles-container", "../assets/particles.json");
+  particlesJS.load("particles-js", "../assets/particles.json");
 });
 
 const observer = new IntersectionObserver((entries) => {
@@ -11,7 +11,7 @@ const observer = new IntersectionObserver((entries) => {
       entry.target.classList.remove("show-fade");
     }
   });
-})
+});
 
 const hiddenElements = document.querySelectorAll(".hidden-fade");
 hiddenElements.forEach((element) => observer.observe(element));
