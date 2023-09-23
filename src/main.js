@@ -1,10 +1,11 @@
+// Load the particles
 document.addEventListener("DOMContentLoaded", () => {
   particlesJS.load("particles-js", "../assets/particles.json");
 });
 
+// Get the fade in animation (from FireShip)
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
-    console.log(entry);
     if (entry.isIntersecting) {
       entry.target.classList.add("show-fade");
     } else {

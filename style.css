@@ -4,6 +4,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
 @layer utilities {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: "Nunito", sans-serif;
   }
@@ -21,15 +25,15 @@
     transform: translateX(0);
   }
 
-  .school-project:nth-child(2) {
+  .coursework:nth-child(2) {
     transition-delay: 200ms;
   }
 
-  .school-project:nth-child(3) {
+  .coursework:nth-child(3) {
     transition-delay: 400ms;
   }
 
-  .school-project:nth-child(4) {
+  .coursework:nth-child(4) {
     transition-delay: 600ms;
   }
 
@@ -51,12 +55,6 @@
     z-index: -10;
     top: 0;
     left: 0
-  }
-
-  .wrapper {
-    height: 100vh;
-    display: grid;
-    place-items: center;
   }
 
   #typewriter {
