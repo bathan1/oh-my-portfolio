@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prettier": "prettier --write \"src/**/*.js\" \"index.html\" --config \".prettierrc.json\""
+    "prettier": "prettier --write \"src/**/*.js\" \"index.html\" \"assets/*.json\" --config \".prettierrc.json\""
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
@@ -17,7 +17,6 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "particlesjs": "^2.2.3",
     "typewriter-effect": "^2.21.0"
   }
 }

@@ -9,12 +9,12 @@ const aboutText3 =
 const aboutText4 =
   " In my free time, I like to play soccer, Overwatch and Counter-Strike with my friends, or watch TV with my pet dog.";
 
-const typewriter = new TypeWriter("#typewriter", {
+const aboutTypewriter = new TypeWriter("#typewriter", {
   autoStart: true,
   delay: 25,
 });
 
-typewriter
+aboutTypewriter
   .typeString(aboutText1)
   .pauseFor(300)
   .typeString(aboutText2)
@@ -22,4 +22,4 @@ typewriter
   .pauseFor(300)
   .typeString(aboutText4);
 
-typewriter.start();
+aboutTypewriter.start();
