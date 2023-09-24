@@ -146,3 +146,33 @@ document.addEventListener("keydown", (e) => {
     }
   }
 });
+
+function filterOptions(e) {
+  e.preventDefault();
+  const checkboxes = document.querySelectorAll('#filter-form input[type="checkbox"]');
+  const selectedFilters = Array.from(checkboxes)
+    .filter(checkbox => checkbox.checked)
+    .map(checkbox => checkbox.value);
+
+  const options = document.querySelectorAll('#project-dropdown option');
+  if (selectedFilters.length === 0) {
+    options.forEach(option => {
+      option.style.display = "block";
+    })
+    return;
+  }
+
+
+  options.forEach(option => {
+    const isVisible = selectedFilters.includes(option.classList[1]);
+    option.style.display = isVisible ? 'block' : 'none';
+  });
+
+
+}
+
+const checkboxes = document.querySelectorAll('#filter-form input[type="checkbox"]');
+checkboxes.forEach(checkbox => {
+  checkbox.addEventListener('change', filterOptions);
+});
+
