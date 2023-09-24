@@ -14,20 +14,19 @@ hiddenElements.forEach((element) => observer.observe(element));
 
 const navLinks = document.querySelectorAll(".nav a");
 
-navLinks.forEach(link => {
+navLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     // Remove 'active' class from all links
-    navLinks.forEach(link => {
-      link.classList.remove('active');
+    navLinks.forEach((link) => {
+      link.classList.remove("active");
     });
 
     // Add 'active' class to the clicked link
-    link.classList.add('active');
+    link.classList.add("active");
   });
 });
 
-
-const sections = document.querySelectorAll('section');
+const sections = document.querySelectorAll("section");
 function isInView(element) {
   const rect = element.getBoundingClientRect();
   return (
@@ -39,18 +38,18 @@ function isInView(element) {
 // Function to update active navigation item
 function updateActiveNavItem() {
   if (window.scrollY === 0) {
-    navLinks.forEach(link => link.classList.remove('active'));
-    navLinks[0].classList.add('active'); // Assuming the first link is "About"
+    navLinks.forEach((link) => link.classList.remove("active"));
+    navLinks[0].classList.add("active"); // Assuming the first link is "About"
     return;
   }
 
   sections.forEach((section, index) => {
     if (isInView(section)) {
-      navLinks.forEach(link => link.classList.remove('active'));
-      navLinks[index].classList.add('active');
+      navLinks.forEach((link) => link.classList.remove("active"));
+      navLinks[index].classList.add("active");
     }
   });
 }
 
 // Event listener for scroll
-window.addEventListener('scroll', updateActiveNavItem);
+window.addEventListener("scroll", updateActiveNavItem);
