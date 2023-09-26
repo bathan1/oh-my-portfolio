@@ -1,63 +1,215 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300&display=swap');
 
-@layer utilities {
-  html {
-    scroll-behavior: smooth;
+:root {
+  --text: #ffffff;
+  --background: #0b090b;
+  --primary: #7b6b6f;
+  --secondary: #161413;
+  --accent: #837672;
+  font-family: "Poppins", sans-serif;
+
+}
+
+html {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  min-height: 100%;
+  background-color: var(--background);
+}
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+body #main-nav {
+  height: 4rem;
+  background-color: var(--primary);
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+#nav-list-container {
+  opacity: 1;
+  margin-right: 10vw;
+  width: 25rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#logo-div {
+  display: flex;
+  align-items: center;
+  margin-left: 10vw;
+}
+
+#logo-span {
+  font-size: 2rem;
+}
+
+#hamburger-svg {
+  transform: scale(0.5);
+}
+
+.line {
+  fill: none;
+  stroke: white;
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+.line2 {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+.line3 {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.opened .line1 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+.opened .line2 {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+.opened .line3 {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+/* xs */
+@media (min-width: 428px) {
+  #hamburger-svg {
+    opacity: 1;
+    order: 3;
+    cursor: pointer;
   }
 
-  body {
-    font-family: "Nunito", sans-serif;
+  #nav-list-container {
+    opacity: 0;
+    width: 15rem;
+    margin-right: 0px;
+  }
+
+  #logo-div {
+    margin-left: 5vw;
+  }
+
+  .logo-slideout {
+    animation-duration: 1s;
+    animation-name: slideout;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; 
+  }
+
+  @keyframes slideout {
+    from {
+      margin-left: 5vw;
+      opacity: 1;
+    }
+
+    to {
+      margin-left: -20%;
+      opacity: 0;
+    }
+  }
+
+  .logo-slidein {
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes slidein {
+    from {
+      margin-left: -20%;
+      opacity: 0;
+    }
+
+    to {
+      margin-left: 5vw;
+      opacity: 1;
+    }
+  }
+
+  .nav-container-fadein {
+    animation-duration: 1s;
+    animation-name: fadein;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
   }
   
-  .hidden-fade {
+  .nav-container-fadeout {
+    animation-duration: 1s;
+    animation-name: fadeout;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes fadeout {
+    from {
+      opacity: 1;
+    }
+  
+    to {
+      opacity: 0;
+    }
+  }
+
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  #hamburger-svg {
     opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-100%);
-    transition: all 1s;
   }
 
-  .show-fade {
+  #nav-list-container {
     opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
+    order: 3;
+    margin-right: 10vw;
   }
+}
 
-  .coursework:nth-child(2) {
-    transition-delay: 200ms;
-  }
+/* md */
+@media (min-width: 768px) {
 
-  .coursework:nth-child(3) {
-    transition-delay: 400ms;
-  }
+}
 
-  .coursework:nth-child(4) {
-    transition-delay: 600ms;
-  }
-
-  #typewriter {
-    font-family: monospace;
-  }
-
-  #ip-project-terminal {
-    font-family: monospace;
-  }
-
-  .active .nav-indicator {
-    width: 4rem;
-    --tw-bg-opacity: 1;
-    background-color: rgb(226 232 240/var(--tw-bg-opacity))
-  }
-
-  .active .nav-text {
-      --tw-text-opacity: 1;
-      color: rgb(226 232 240/var(--tw-text-opacity))
-  }
-
-  body {
-    background: rgb(0,0,36);
-    background: linear-gradient(56deg, rgba(0,0,36,1) 0%, rgba(97,11,130,1) 75%);
-  }
+/* sm */
+@media (min-width: 640px) {
+  
 }
