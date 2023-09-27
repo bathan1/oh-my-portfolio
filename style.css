@@ -4,14 +4,12 @@
 /* font-family: "Poppins", sans-serif; */
 
 :root {
-  --text: #fcfcfc;
-  --background: #000000;
-  --primary: #838183;
-  --secondary: #0f0f0f;
-  --accent: #747674;
-
+  --text: #ffffff;
+  --background: #160f24;
+  --primary: #b4a1d9;
+  --secondary: #1f1533;
+  --accent: #7b58bb;
   font-family: "Poppins", sans-serif;
-
 }
 
 html {
@@ -30,9 +28,20 @@ a {
   text-decoration: none;
 }
 
+header {
+  overflow: hidden;
+  font-weight: bold;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
 body #main-nav {
   height: 3.5rem;
-  background-color: var(--primary);
+  background-color: var(--secondary);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -101,6 +110,11 @@ body #main-nav {
   width: 2rem;
 }
 
+/* Hero section styles */
+#hero-section {
+  min-height: 100vh;
+}
+
 /* Projects section styles */
 main {
   margin-top: 5rem;
@@ -161,3 +175,16 @@ main #projects-section {
   background-color: var(--primary);
   border-radius: 10px;
 }
+
+/* Coursework section style */
+#coursework-section {
+  min-height: 100vh;
+}
+
+/* Footer style */
+footer {
+  min-height: 10vh;
+  min-width: 100vw;
+  display: flex;
+}
+
