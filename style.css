@@ -99,3 +99,72 @@ body #main-nav {
 #linkedin-svg {
   width: 2rem;
 }
+
+/* Projects section styles */
+main {
+  margin-top: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  min-height: 50vh;
+}
+
+main #projects-section {
+  min-height: 50vh;
+}
+
+#featured-projects-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+#featured-projects-container {
+  min-height: 40vh;
+  width: 90vw;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.featured-project-card {
+  flex: 1;
+  height: 40vh;
+  background-color: var(--primary);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+#side-projects-main-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+#side-projects-other-wrapper {
+  width: 90vw;
+  height: 50vh;
+  display: flex;
+  gap: 0.3rem;
+}
+
+#side-projects-grid-container {
+  width: 66%;
+  border-color: var(--primary);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+}
+
+#side-projects-flex-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.side-project-card {
+  flex: 1;
+  height: 20vh;
+  background-color: var(--secondary);
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 10px;
+}
