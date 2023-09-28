@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  three:
+    specifier: ^0.156.1
+    version: 0.156.1
   typewriter-effect:
     specifier: ^2.21.0
     version: 2.21.0(react-dom@18.2.0)(react@18.2.0)
@@ -353,6 +356,10 @@ packages:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /three@0.156.1:
+    resolution: {integrity: sha512-kP7H0FK9d/k6t/XvQ9FO6i+QrePoDcNhwl0I02+wmUJRNSLCUIDMcfObnzQvxb37/0Uc9TDT0T1HgsRRrO6SYQ==}
+    dev: false
 
   /typewriter-effect@2.21.0(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-Y3VL1fuJpUBj0gS4OTXBLzy1gnYTYaBuVuuO99tGNyTkkub5CXi+b/hsV7Og9fp6HlhogOwWJwgq7iXI5sQlEg==}
