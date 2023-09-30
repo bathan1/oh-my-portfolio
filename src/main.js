@@ -1,5 +1,8 @@
 import Typewriter from "typewriter-effect/dist/core";
 import KUTE from "kute.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "@studio-freight/lenis";
 
 let numUserEnterTerminal = 0;
 let terminalPromptFullyDisplay = false;
@@ -28,7 +31,7 @@ const handleEnterTerminal = (e) => {
     if (numUserEnterTerminal === 0) {
       document.getElementById("terminal-commander").textContent = "";
       new Typewriter("#terminal-commander", {
-        strings: "./nathan.out",
+        strings: "./nathan.exe",
         delay: 50,
         autoStart: true
       });
@@ -69,3 +72,36 @@ document.addEventListener("scroll", () => {
     document.removeEventListener("keyup", handleEnterTerminal);
   }
 });
+
+gsap.registerPlugin(ScrollTrigger);
+
+let tlFeaturedCards = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#about-section",
+    start: "85% center",
+    end: "130% 25%",
+    scrub: true,
+    markers: true
+  }
+});
+
+tlFeaturedCards.from(".project-card", {
+  opacity: 0,
+  stagger: {
+    each: 1,
+    ease: "power2.outIn"
+  }
+});
+
+// Smooth scroll
+const lenis = new Lenis();
+
+lenis.on('scroll', (e) => {
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);

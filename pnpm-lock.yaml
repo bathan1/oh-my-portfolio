@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@studio-freight/lenis':
+    specifier: ^1.0.25
+    version: 1.0.25
+  gsap:
+    specifier: ^3.12.2
+    version: 3.12.2
   kute.js:
     specifier: ^2.2.4
     version: 2.2.4
@@ -223,6 +229,10 @@ packages:
     dev: true
     optional: true
 
+  /@studio-freight/lenis@1.0.25:
+    resolution: {integrity: sha512-O/yBzy+SEMbp+x/isXm5CqFsGUbazwOKTGeMo5tZCHgTEUINxndttTI/90jgysXNRx0f+QDJBKaBTdx40KBF7w==}
+    dev: false
+
   /@thednp/bezier-easing@1.0.5:
     resolution: {integrity: sha512-wKl6Q9EFCKp5S6EKNMmHc9wfCIVO4+a4dwijXJcBnYdG/9pDPRFHDGrIjANjSCf/CTkWx6VKZUOcNScCSDYtYQ==}
     dev: false
@@ -273,6 +283,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /gsap@3.12.2:
+    resolution: {integrity: sha512-EkYnpG8qHgYBFAwsgsGEqvT1WUidX0tt/ijepx7z8EUJHElykg91RvW1XbkT59T0gZzzszOpjQv7SE41XuIXyQ==}
+    dev: false
 
   /js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
