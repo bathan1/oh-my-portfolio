@@ -3,12 +3,27 @@
 /* Light theme color palette: to be implemented */
 /* font-family: "Poppins", sans-serif; */
 
+:root:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: radial-gradient(
+    circle 8rem at var(--cursorXPos) var(--cursorYPos),
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  z-index: 11;
+}
+
 :root {
   --text: #f2f3f8;
   --background: #0e101b;
   --primary: #424c80;
   --secondary: #151828;
   --accent: #5d6aac;
+  --cursorXPos: 50vw;
+  --cursorYPos: 50vh;
 
   --gradient-start: rgb(131, 83, 241);
   font-family: "Poppins", sans-serif;

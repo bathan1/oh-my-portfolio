@@ -99,4 +99,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     e.preventDefault();
     lenis.scrollTo(this.getAttribute('href'));
   });
-})
+});
+
+function trackMouse(event) {
+  document.documentElement.style.setProperty(
+    '--cursorXPos',
+    `${event.clientX}px`
+  )
+  document.documentElement.style.setProperty(
+    '--cursorYPos',
+    `${event.clientY}px`
+  )
+}
+
+document.addEventListener('mousemove', trackMouse)
