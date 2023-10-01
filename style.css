@@ -4,11 +4,11 @@
 /* font-family: "Poppins", sans-serif; */
 
 :root {
-  --text: #ffffff;
-  --background: #160f24;
-  --primary: #b4a1d9;
-  --secondary: #1f1533;
-  --accent: #7b58bb;
+  --text: #f2f3f8;
+  --background: #0e101b;
+  --primary: #424c80;
+  --secondary: #151828;
+  --accent: #5d6aac;
 
   --gradient-start: rgb(131, 83, 241);
   font-family: "Poppins", sans-serif;
@@ -36,12 +36,24 @@ header {
   z-index: 2;
 }
 
+.appear {
+  transition: all 0.8s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.appear.inview {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+
 .gradient-rounded-border {
   border-radius: 10px;
   border: 5px solid transparent;
   background:
     linear-gradient(var(--secondary) 0%, var(--secondary) 100%) padding-box,
-    linear-gradient(to top, rgb(236, 158, 248), rgb(131, 83, 241)) border-box;
+    linear-gradient(to top, rgb(86, 89, 218), rgb(95, 208, 248)) border-box;
 }
 
 .sticky {
@@ -131,12 +143,15 @@ body #main-nav {
 
 /* Hero section styles */
 #hero-section {
-  max-height: 20vh;
+  height: 100vh;
   color: var(--text);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
 }
 
 #hero-section h1 {
@@ -158,43 +173,25 @@ body #main-nav {
   bottom: -50px;
 }
 
-/* Wave layer styling */
-.spacer {
-  aspect-ratio: 960/300;
-  width: 100%;
-  height: 45vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-#top-layer {
-  margin-top: -3.5rem;
-}
-
-.layer1 {
-  background-image: url("./assets/svgs/layer1.svg");
-}
-
-.flip {
-  transform: rotate(180deg);
-  margin-top: 5rem;
+#main-text-container {
+  max-width: 100%;
+  padding: 10rem;
 }
 
 .blob-motion {
   position: absolute;
-  transform: translateY(-20%) scale(0.75);
+  transform: translateY(-50%) translateX(-50%) scale(0.75);
   z-index: -1;
 }
 
 /* About section styles */
 #about-section {
-  min-height: 100vh;
+  min-height: 75vh;
   display: flex;
   margin-bottom: 5rem;
-  background-color: var(--primary);
-  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
-  margin-top: 5rem;
+  gap: 1rem;
+
+  padding-top: 5rem;
 }
 
 #right-about-card {
@@ -205,7 +202,7 @@ body #main-nav {
 }
 
 #left-about-card {
-  flex: 1;
+  flex: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -213,15 +210,15 @@ body #main-nav {
 }
 
 #terminal-wrapper {
-  width: 90%;
-  height: 50%;
+  width: 100%;
+  height: 100%;
   color: var(--accent);
   font-weight: bold;
   font-family: monospace;
   font-size: larger;
   padding: 1rem;
-  box-shadow: 10px 10px 60px 0px rgba(0, 0, 0, 0.75);
   transform: translateZ(10px);
+  box-sizing: border-box;
 }
 
 #terminal-wrapper .terminal-text {
@@ -241,7 +238,6 @@ body #main-nav {
 
 /* Projects section styles */
 main {
-  margin-top: 3.5rem;
   min-height: 100vh;
 }
 

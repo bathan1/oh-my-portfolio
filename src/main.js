@@ -1,7 +1,5 @@
 import Typewriter from "typewriter-effect/dist/core";
 import KUTE from "kute.js";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 
 let numUserEnterTerminal = 0;
@@ -12,19 +10,9 @@ const tween = KUTE.fromTo(
   { path: "#blob1" },
   { path: "#blob2" },
   { repeat: 999, duration: 3000, yoyo: true }
-)
+);
 
 tween.start();
-
-const isInViewport = (element) => {
-  let rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  )
-};
 
 const handleEnterTerminal = (e) => {
   if (e.key === "Enter") {
@@ -55,43 +43,43 @@ const handleEnterTerminal = (e) => {
   } 
 };
 
-document.addEventListener("scroll", () => {
-  let terminal = document.getElementById("terminal-wrapper");
 
-  if (isInViewport(terminal)) {
-    if (terminalPromptFullyDisplay === false) {
-      new Typewriter("#terminal-commander", {
-        strings: "gcc -std=c11 -Wall -Wextra -pedantic about-nathan.c -o nathan.out",
-        delay: 50,
-        autoStart: true,
-      });
-      terminalPromptFullyDisplay = true;
+const appearElements = document.querySelectorAll(".appear");
+const cb = (entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("inview");
+
+      if (entry.target.classList.contains("about-section") && !terminalPromptFullyDisplay) {
+        new Typewriter("#terminal-commander", {
+          strings: "gcc -std=c11 -Wall -Wextra -pedantic about-nathan.c -o nathan.exe",
+          delay: 50,
+          autoStart: true,
+        });
+        terminalPromptFullyDisplay = true;
+      }
+      document.addEventListener("keyup", handleEnterTerminal);
+    } else {
+      entry.target.classList.remove("inview");
     }
-    document.addEventListener("keyup", handleEnterTerminal);
-  } else {
-    document.removeEventListener("keyup", handleEnterTerminal);
-  }
-});
+  });
+};
+const io = new IntersectionObserver(cb);
+appearElements.forEach(e => io.observe(e));
 
-gsap.registerPlugin(ScrollTrigger);
+const appearProjects = document.querySelectorAll(".appear-list");
+const active = (entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("inview-list");
+    } else {
+      entry.target.classList.remove("inview-list");
+    }
+  })
+};
 
-let tlFeaturedCards = gsap.timeline({
-  scrollTrigger: {
-    trigger: "#about-section",
-    start: "85% center",
-    end: "130% 25%",
-    scrub: true,
-    markers: true
-  }
-});
-
-tlFeaturedCards.from(".project-card", {
-  opacity: 0,
-  stagger: {
-    each: 1,
-    ease: "power2.outIn"
-  }
-});
+const projectsIo = new IntersectionObserver(active);
+appearProjects.forEach(e => projectsIo.observe(e));
 
 // Smooth scroll
 const lenis = new Lenis();
@@ -105,3 +93,10 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf);
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    lenis.scrollTo(this.getAttribute('href'));
+  });
+})
