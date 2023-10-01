@@ -39,7 +39,7 @@ main:before {
   position: fixed;
   background: radial-gradient(
     circle 25rem at var(--cursorXPos) var(--cursorYPos),
-    rgba(255, 255, 255, 0.04) 0%,
+    rgba(255, 255, 255, 0.025) 0%,
     rgba(255, 255, 255, 0.005) 100%
   );
   z-index: -1;
@@ -208,7 +208,6 @@ body #main-nav {
   min-height: 75vh;
   display: flex;
   margin-bottom: 5rem;
-  gap: 1rem;
 
   padding-top: 5rem;
 }
@@ -218,14 +217,20 @@ body #main-nav {
   flex-shrink: 1;
   flex-basis: 0;
   transition: flex-grow 1s ease;
+  z-index: -5;
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5 ease, height 0.5 ease;
+  overflow: hidden;
 }
 
-#left-about-card {
-  flex: 3;
+#terminal-container {
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: -5;
 }
 
 #terminal-wrapper {
@@ -253,14 +258,27 @@ body #main-nav {
 
 .info-card {
   flex: 1;
+  
+  box-sizing: border-box;
+  padding: 1rem;
+  color: var(--text);
+}
+
+.info-card > h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.info-card > p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.15rem;
 }
 
 /* Projects section styles */
-
-
 .main-section {
-  margin-left: 7rem;
-  margin-right: 7rem;
+  margin-left: 15rem;
+  margin-right: 15rem;
 }
 
 main #projects-section {

@@ -27,6 +27,9 @@ const handleEnterTerminal = (e) => {
     }  else if (numUserEnterTerminal === 1) {
       document.getElementById("terminal-commander").textContent = "";
       document.getElementById("right-about-card").style.flexGrow = "1";
+      document.getElementById("right-about-card").style.opacity = "1";
+      document.getElementById("right-about-card").style.height = "auto";
+      document.getElementById("about-section").style.gap = "3rem";
 
       const infoCards = document.querySelectorAll(".info-card");
       infoCards.forEach((card) => {
