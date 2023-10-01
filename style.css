@@ -188,8 +188,6 @@ body #main-nav {
 #hero-section p {
   font-size: 1rem;
   opacity: 0.5;
-  position: relative;
-  bottom: -50px;
 }
 
 #main-text-container {
@@ -201,6 +199,48 @@ body #main-nav {
   position: absolute;
   transform: translateY(-50%) translateX(-50%) scale(0.75);
   z-index: -1;
+}
+
+.arrow-scroll {
+  position: relative;
+  height: 4rem;
+}
+
+.arrow {
+  border: solid var(--accent);
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 12px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.arrow:nth-child(2) {
+  animation:
+    arrow1 1.5s
+    ease-in-out infinite;
+}
+
+.arrow:nth-child(3) {
+  animation:
+    arrow2 1.5s
+    ease-in-out infinite;
+}
+
+@keyframes arrow1 {
+  100% {
+    opacity: 0;
+    top: 100%;
+  }
+}
+
+@keyframes arrow2 {
+  100% {
+    opacity: 0;
+    top: 50%;
+  }
 }
 
 /* About section styles */
