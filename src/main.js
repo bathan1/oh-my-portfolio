@@ -102,14 +102,16 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 function trackMouse(event) {
-  document.documentElement.style.setProperty(
+  const mainElement = document.querySelector("main");
+
+  mainElement.style.setProperty(
     '--cursorXPos',
     `${event.clientX}px`
-  )
-  document.documentElement.style.setProperty(
+  );
+  mainElement.style.setProperty(
     '--cursorYPos',
     `${event.clientY}px`
-  )
+  );
 }
 
-document.addEventListener('mousemove', trackMouse)
+document.addEventListener('mousemove', trackMouse);
