@@ -449,7 +449,6 @@ main #projects-grid {
   border-width: 5px;
   border-style: solid;
   border-image: linear-gradient(to right, rgb(86, 89, 218), rgb(95, 208, 248)) 1;
-  z-index: -3;
 }
 
 .project-card {
@@ -457,7 +456,6 @@ main #projects-grid {
   position: relative;
   overflow: hidden;
   color: var(--text);
-  z-index: -3;
 }
 
 .project-img-container {
