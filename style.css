@@ -248,6 +248,10 @@ body #main-nav {
   }
 }
 
+#hero-bottom-half {
+  cursor: pointer;
+}
+
 /* About section styles */
 #about-section {
   min-height: 85vh;
@@ -261,6 +265,8 @@ body #main-nav {
   flex: 1;
   color: var(--text);
   text-align: center;
+  margin-top: 5rem;
+  margin-bottom: 1.25rem;
 }
 
 .compile-prompt > h1 {
@@ -341,6 +347,7 @@ body #main-nav {
   grid-template-columns: 33% 33% 33%;
   grid-template-rows: 15% 15% 70%;
   gap: auto 0.25rem;
+  padding: 1.5rem;
 }
 
 #skills-grid-header {
@@ -414,9 +421,12 @@ body #main-nav {
 
 main #projects-section {
   min-height: 75vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-auto-flow: row;
+  gap: 100px 250px;
+
   -webkit-box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.75);
@@ -463,8 +473,8 @@ main #projects-section {
   box-sizing: border-box;
   margin-top: 7.5rem;
   min-height: 15vh;
-  margin-right: 10rem;
   margin-left: 10rem;
+  margin-right: 10rem;
 }
 
 .footer-container > .footer-line {
@@ -473,12 +483,63 @@ main #projects-section {
 
 .footer-container > #footer {
   display: flex;
+  justify-content: space-between;
   color: var(--text);
   opacity: 0.7;
 }
 
 #footer > .build-info {
   box-sizing: border-box;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+#footer > .return-arrow-scroll {
+  padding: 1.5rem;
+  position: relative;
+  right: 5%;
+  height: 4rem; 
+  cursor: pointer;
+}
+
+.return-arrow-scroll > p {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+  bottom: -66%;
+}
+
+.return-arrow {
+  border: solid var(--accent);
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 12px;
+  position: absolute;
+  top: 45%;
+  transform: translateX(150%) rotate(-135deg);
+}
+
+.return-arrow:nth-child(2) {
+  animation:
+    return-arrow1 1.5s
+    ease-in-out infinite;
+}
+
+.return-arrow:nth-child(3) {
+  animation:
+    return-arrow2 1.5s
+    ease-in-out infinite;
+}
+
+@keyframes return-arrow1 {
+  100% {
+    opacity: 0;
+    top: 22.5%;
+  }
+}
+
+@keyframes return-arrow2 {
+  100% {
+    opacity: 0;
+    top: 0%;
+  }
 }

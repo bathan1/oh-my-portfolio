@@ -109,3 +109,13 @@ function trackMouse(event) {
 }
 
 document.addEventListener('mousemove', trackMouse);
+
+const scrollDownButton = document.getElementById("hero-bottom-half");
+scrollDownButton.addEventListener("click", (e) => {
+  lenis.scrollTo(document.getElementById("about-section"));
+});
+
+const scrollBackUpButton = document.getElementById("footer-animation");
+scrollBackUpButton.addEventListener("click", (e) => {
+  lenis.scrollTo(document.getElementById("hero-section"));
+});
