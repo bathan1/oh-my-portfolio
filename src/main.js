@@ -1,18 +1,9 @@
 import Typewriter from "typewriter-effect/dist/core";
-import KUTE from "kute.js";
 import Lenis from "@studio-freight/lenis";
 
 let numUserEnterTerminal = 0;
 let terminalPromptFullyDisplay = false;
 
-const tween = KUTE.fromTo(
-  "#blob1",
-  { path: "#blob1" },
-  { path: "#blob2" },
-  { repeat: 999, duration: 3000, yoyo: true }
-);
-
-tween.start();
 
 const handleEnterTerminal = (e) => {
   if (e.key === "Enter") {
@@ -29,7 +20,7 @@ const handleEnterTerminal = (e) => {
       document.getElementById("right-about-card").style.flexGrow = "1";
       document.getElementById("right-about-card").style.opacity = "1";
       document.getElementById("right-about-card").style.height = "auto";
-      document.getElementById("about-section").style.gap = "3rem";
+      document.getElementById("terminal-flex").style.gap = "3rem";
 
       const infoCards = document.querySelectorAll(".info-card");
       infoCards.forEach((card) => {

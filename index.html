@@ -46,70 +46,70 @@
     <main id="main-content">
       <section id="hero-section" class="main-section">
         <div id="main-text-container">
-          <h1>Hi, my name is Nathan,</h1>
-          <h3>and I am (not) a 10x developer.</h3>
-          <p>Scroll down to learn more about me!</p>
-          <div class="arrow-scroll">
-            <div class="arrow"></div>
-            <div class="arrow"></div>
-            <div class="arrow"></div>
-          </div>
-  
-          <svg
-            id="visual"
-            class="blob-motion"
-            viewBox="0 0 960 300"
-            width="960"
-            height="300"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1"
-          >
-            <g transform="translate(462.88527611618196 137.7684692274528)">
-              <path
-                id="blob1"
-                d="M76.4 -69.9C101.4 -51.4 125.7 -25.7 121.7 -4C117.7 17.7 85.4 35.4 60.4 59C35.4 82.7 17.7 112.3 -8.2 120.6C-34.2 128.8 -68.4 115.7 -81.2 92C-94 68.4 -85.5 34.2 -80.1 5.4C-74.7 -23.3 -72.3 -46.7 -59.5 -65.2C-46.7 -83.7 -23.3 -97.3 1.2 -98.5C25.7 -99.7 51.4 -88.4 76.4 -69.9"
-                fill="#424c80"
-              ></path>
-            </g>
-            <g transform="translate(486.06941770186154 171.48753607312685)" style="visibility: hidden">
-              <path
-                id="blob2"
-                d="M53.5 -63.7C68.3 -38.7 78.7 -19.3 85.4 6.7C92.1 32.8 95.2 65.5 80.4 78C65.5 90.5 32.8 82.8 5.5 77.2C-21.7 71.7 -43.4 68.4 -61.7 55.9C-80 43.4 -95 21.7 -100.7 -5.7C-106.3 -33 -102.7 -66 -84.3 -91C-66 -116 -33 -133 -6.8 -126.2C19.3 -119.3 38.7 -88.7 53.5 -63.7"
-                fill="#424c80"
-              ></path>
-            </g>
-          </svg>
+          <h1>Hi, I'm Nathan, and I am (not) a 10x developer.</h1>
         </div>
+          <div id="hero-bottom-half">
+            <p>Scroll down to learn more about me!</p>
+            <div class="arrow-scroll">
+              <div class="arrow"></div>
+              <div class="arrow"></div>
+              <div class="arrow"></div>
+            </div>
+          </div>
+
       </section>
 
       <section id="about-section" class="main-section about-section appear">
-        <div id="terminal-container">
-          <div id="terminal-wrapper" class="gradient-rounded-border">
-            <p class="terminal-text">oh-my-portfolio ~$</p>
-            <p class="terminal-text" id="terminal-commander"></p>
+        <div class="compile-prompt">
+          <h1>Want to compile?</h1>
+          <p>Press enter (desktop) or tap (mobile)</p>
+        </div> 
+        <div id="terminal-flex">
+          <div id="terminal-container">
+            <div id="terminal-wrapper" class="gradient-rounded-border">
+              <p class="terminal-text">oh-my-portfolio ~$</p>
+              <p class="terminal-text" id="terminal-commander"></p>
+            </div>
           </div>
-        </div>
-        <div id="right-about-card">
-          <div id="info-card-container">
-            <div id="about-blurb" class="info-card gradient-rounded-border hidden">
-              <h1>About me</h1>
-              <p>
-                My name is Nathan Oh, and I am an aspiring Software Engineer 
-                studying Computer Science at the Johns Hopkins University
-                as a junior in undergrad. While my more recent works have been
-                in web development, I am a versatile programmer capable of adapting
-                to new technologies in order to solve any problem.
-                In my free time, you can find me playing soccer or video games like 
-                Counter-Strike and Overwatch, watching TV and anime with my pet dog. 
-              </p>
+          <div id="right-about-card">
+            <div id="info-card-container">
+              <div id="about-blurb" class="info-card gradient-rounded-border hidden">
+                <h1>About me</h1>
+                <p>
+                  My name is Nathan Oh, and I am an aspiring Software Engineer
+                  studying Computer Science at the Johns Hopkins University
+                  as a junior in undergrad. While my more recent works have been
+                  in web development, I am a versatile programmer capable of adapting
+                  to new technologies in order to solve any problem.
+                  In my free time, you can find me playing soccer or video games like
+                  Counter-Strike and Overwatch, watching TV and anime with my pet dog.
+                </p>
+              </div>
+              <div id="skills-blurb" class="info-card gradient-rounded-border hidden">
+                <h1 id="skills-grid-header">Skills</h1>
+                <h2 id="pl-grid-header">Languages</h2>
+                <ul id="pl-list" class="skills-list">
+                  <li>Java</li>
+                  <li>C/C++</li>
+                  <li>HTML</li>
+                  <li>CSS</li>
+                  <li>JavaScript</li>
+                </ul>
+                <h2 id="frameworks-header">Frameworks</h2>
+                <ul id="frameworks-list" class="skills-list">
+                  <li>React</li>
+                  <li>Express</li>
+                  <li>TypeScript</li>
+                  <li>TailwindCSS</li>
+                  <li>Vite</li>
+                </ul>
+                <h2 id="databases-header">Databases</h2>
+                <ul id="databases-list" class="skills-list">
+                  <li>MongoDB</li>
+                  <li>PostgreSQL</li>
+                </ul>
+              </div>
             </div>
-            <div id="skills-blurb" class="info-card gradient-rounded-border hidden">
-              <h1>Skills</h1>
-              <ul id="skills-list">
-              </ul>
-            </div>
-            <div id="" class="info-card gradient-rounded-border hidden"></div>
           </div>
         </div>
       </section>
@@ -129,7 +129,29 @@
           </div>
         </div>
       </section>
-      <footer id="footer"></footer>
+      <div class="footer-container">
+        <div class="footer-line"></div>
+        <footer id="footer">
+          <div class="build-info">
+            <p>
+              This site was written with pure HTML/CSS and 
+              <br>
+              scripted with vanilla JavaScript
+              in VSCode. 
+              <br>
+              Dependencies managed by pnpm and bundled with Vite, 
+              <br>
+              with 
+              hosting on GitHub pages.
+            </p>
+          </div>
+          <div class="return-arrow">
+            <div class="return-arrow"></div>
+            <div class="return-arrow"></div>
+            <div class="return-arrow"></div>
+          </div>
+        </footer>
+      </div>
     </main>
 
     <script defer src="./src/main.js" type="module"></script>
