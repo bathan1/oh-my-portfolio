@@ -10,7 +10,7 @@
   --secondary: #151828;
   --accent: #5d6aac;
 
-
+  letter-spacing: 0.03rem;
   --gradient-start: rgb(131, 83, 241);
   font-family: "Poppins", sans-serif;
 }
@@ -118,6 +118,7 @@ body #main-nav {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-weight: 100;
 }
 
 .page-link {
@@ -293,7 +294,7 @@ body #main-nav {
 }
 
 #terminal-container {
-  flex: 2;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -414,12 +415,20 @@ body #main-nav {
 }
 
 /* Projects section styles */
-.main-section {
-  margin-left: 7.5rem;
-  margin-right: 7.5rem;
+.project-header {
+  text-align: center;
+  color: var(--text);
+  padding: 2rem;
+  margin-bottom: 5rem;
+  font-size: 3rem;
 }
 
-main #projects-section {
+.main-section {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+main #projects-grid {
   box-sizing: border-box;
   min-height: 100vh;
   max-width: 100%;
@@ -427,7 +436,7 @@ main #projects-section {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-auto-flow: row;
-  gap: 100px 200px;
+  gap: 100px 100px;
 }
 
 .project-container {
@@ -442,6 +451,7 @@ main #projects-section {
   width: 100%;
   position: relative;
   overflow: hidden;
+  color: var(--text);
 }
 
 .project-img-container {
@@ -452,6 +462,18 @@ main #projects-section {
 
 #biomatch-img {
   background-image: url("./assets/images/biomatch-homepage.png");
+}
+
+#wakeup-img {
+  background-image: url("./assets/images/wakeupapp.png");
+}
+
+#stickynote-img {
+  background-image: url("./assets/images/stickynote.png");
+}
+
+#calculator-img {
+  background-image: url("./assets/images/calculator.png");
 }
 
 .project-img {
@@ -499,11 +521,19 @@ main #projects-section {
 }
 
 .project-card:hover .project-img{
-  background-size: 150%;
+  background-size: 125%;
 }
 
 .project-card:hover .project-blurb .project-description{
   opacity: 1;
+}
+
+.project-blurb > h3 {
+  font-size: 2rem;
+}
+
+.project-blurb > p {
+  padding-top: 0.5rem;
 }
 
 /* Footer style */
@@ -511,8 +541,6 @@ main #projects-section {
   box-sizing: border-box;
   margin-top: 7.5rem;
   min-height: 15vh;
-  margin-left: 10rem;
-  margin-right: 10rem;
 }
 
 .footer-container > .footer-line {
@@ -521,7 +549,7 @@ main #projects-section {
 
 .footer-container > #footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   color: var(--text);
   opacity: 0.7;
 }

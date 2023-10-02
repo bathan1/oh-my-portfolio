@@ -17,7 +17,7 @@ const handleEnterTerminal = (e) => {
       numUserEnterTerminal++;
     }  else if (numUserEnterTerminal === 1) {
       document.getElementById("terminal-commander").textContent = "";
-      document.getElementById("right-about-card").style.flexGrow = "1";
+      document.getElementById("right-about-card").style.flexGrow = "2";
       document.getElementById("right-about-card").style.opacity = "1";
       document.getElementById("right-about-card").style.height = "auto";
       document.getElementById("terminal-flex").style.gap = "3rem";
@@ -91,7 +91,9 @@ requestAnimationFrame(raf);
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
-    lenis.scrollTo(this.getAttribute('href'));
+    lenis.scrollTo(this.getAttribute('href'), {
+      offset: -50
+    });
   });
 });
 
