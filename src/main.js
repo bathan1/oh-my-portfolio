@@ -16,16 +16,16 @@ const handleEnterTerminal = (e) => {
       });
       numUserEnterTerminal++;
     }  else if (numUserEnterTerminal === 1) {
-      
+
+      const terminalContainer = document.getElementById("terminal-container");
+      const rightAboutCard = document.getElementById("right-about-card");
       if (window.innerWidth < 768) {
-        const terminalContainer = document.getElementById("terminal-container");
-        const rightAboutCard = document.getElementById("right-about-card");
         terminalContainer.style.opacity = "0";
         setTimeout(() => {
           terminalContainer.remove();
           rightAboutCard.style.flexGrow = "1";
           rightAboutCard.style.opacity = "1";
-          rightAboutCard.style.height = "auto";
+          rightAboutCard.style.height = "100%";
         }, 1000);
       } else {
         document.getElementById("terminal-commander").textContent = "";
