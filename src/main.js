@@ -24,8 +24,7 @@ const handleEnterTerminal = (e) => {
 
       const infoCards = document.querySelectorAll(".info-card");
       infoCards.forEach((card) => {
-        card.classList.remove("hidden");
-        card.classList.add("show");
+        card.style.opacity = "1";
       })
 
       numUserEnterTerminal++;

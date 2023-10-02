@@ -43,7 +43,7 @@ main:before {
   position: fixed;
   background: radial-gradient(
     circle 25rem at var(--cursorXPos) var(--cursorYPos),
-    rgba(255, 255, 255, 0.045) 0%,
+    rgba(255, 255, 255, 0.06) 0%,
     rgba(255, 255, 255, 0.005) 100%
   );
   z-index: -1;
@@ -330,6 +330,9 @@ body #main-nav {
   box-sizing: border-box;
   padding: 1rem;
   color: var(--text);
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+  transition-delay: 0s;
 }
 
 .info-card > h1 {
@@ -437,6 +440,7 @@ main #projects-grid {
   grid-template-rows: auto auto;
   grid-auto-flow: row;
   gap: 100px 100px;
+  z-index: -3;
 }
 
 .project-container {
@@ -445,6 +449,7 @@ main #projects-grid {
   border-width: 5px;
   border-style: solid;
   border-image: linear-gradient(to right, rgb(86, 89, 218), rgb(95, 208, 248)) 1;
+  z-index: -3;
 }
 
 .project-card {
@@ -452,6 +457,7 @@ main #projects-grid {
   position: relative;
   overflow: hidden;
   color: var(--text);
+  z-index: -3;
 }
 
 .project-img-container {
