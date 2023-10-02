@@ -415,57 +415,95 @@ body #main-nav {
 
 /* Projects section styles */
 .main-section {
-  margin-left: 15rem;
-  margin-right: 15rem;
+  margin-left: 7.5rem;
+  margin-right: 7.5rem;
 }
 
 main #projects-section {
-  min-height: 75vh;
+  box-sizing: border-box;
+  min-height: 100vh;
+  max-width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
   grid-auto-flow: row;
-  gap: 100px 250px;
-
-  -webkit-box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.75);
+  gap: 100px 200px;
 }
 
-#featured-projects-wrapper {
+.project-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  border-width: 5px;
+  border-style: solid;
+  border-image: linear-gradient(to right, rgb(86, 89, 218), rgb(95, 208, 248)) 1;
 }
 
-#featured-projects-container {
+.project-card {
   width: 100%;
-  display: flex;
-  gap: 0.3rem;
+  position: relative;
+  overflow: hidden;
 }
 
-.featured-project-card {
-  flex: 1;
-  height: 40vh;
-}
-
-#side-projects-main-wrapper {
-  margin-top: 0.5rem;
-  height: 35vh;
+.project-img-container {
   width: 100%;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 0.3rem;
+  height: 100%;
+  margin: 0 auto;
 }
 
-#side-projects-flex-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.3rem;
+#biomatch-img {
+  background-image: url("./assets/images/biomatch-homepage.png");
 }
 
-.side-project-card {
-  flex: 1;
+.project-img {
+  background-size: 100%;
+  background-position-x: left;
+  background-repeat: no-repeat;
+  height: 100%;
+  transition: background-size 0.3s ease-in-out;
+}
+
+.project-card .project-blurb {
+  position: absolute;
+  padding: 1rem;
+  bottom: 0;
+  height: 15%;
+  background: var(--primary);
+  backdrop-filter: blur(20px);
+  transition: height 0.3s ease-in-out;
+}
+
+.project-blurb .project-description {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.action-btn {
+  float: right;
+  padding: 0.5rem 1rem;
+  font-family: inherit;
+  background: #0AA0E2;
+  border: 0;
+  color: white;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.action-btn:hover {
+  background: #098fc8;
+}
+
+.project-card:hover .project-blurb{
+  height: 80%;
+}
+
+.project-card:hover .project-img{
+  background-size: 150%;
+}
+
+.project-card:hover .project-blurb .project-description{
+  opacity: 1;
 }
 
 /* Footer style */
