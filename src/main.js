@@ -6,7 +6,7 @@ let terminalPromptFullyDisplay = false;
 
 
 const handleEnterTerminal = (e) => {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" || e.type === "touchstart") {
     if (numUserEnterTerminal === 0) {
       document.getElementById("terminal-commander").textContent = "";
       new Typewriter("#terminal-commander", {
@@ -16,12 +16,24 @@ const handleEnterTerminal = (e) => {
       });
       numUserEnterTerminal++;
     }  else if (numUserEnterTerminal === 1) {
-      document.getElementById("terminal-commander").textContent = "";
-      document.getElementById("right-about-card").style.flexGrow = "2";
-      document.getElementById("right-about-card").style.opacity = "1";
-      document.getElementById("right-about-card").style.height = "auto";
-      document.getElementById("terminal-flex").style.gap = "3rem";
-
+      
+      if (window.innerWidth < 768) {
+        const terminalContainer = document.getElementById("terminal-container");
+        const rightAboutCard = document.getElementById("right-about-card");
+        terminalContainer.style.opacity = "0";
+        setTimeout(() => {
+          terminalContainer.remove();
+          rightAboutCard.style.flexGrow = "1";
+          rightAboutCard.style.opacity = "1";
+          rightAboutCard.style.height = "auto";
+        }, 1000);
+      } else {
+        document.getElementById("terminal-commander").textContent = "";
+        document.getElementById("terminal-flex").style.gap = "3rem";
+        rightAboutCard.style.flexGrow = "2";
+        rightAboutCard.style.opacity = "1";
+        rightAboutCard.style.height = "auto";
+      }
       const infoCards = document.querySelectorAll(".info-card");
       infoCards.forEach((card) => {
         card.style.opacity = "1";
@@ -52,11 +64,15 @@ const cb = (entries) => {
         terminalPromptFullyDisplay = true;
       }
       document.addEventListener("keyup", handleEnterTerminal);
+      if (window.innerWidth < 768) {
+        document.getElementById("terminal-flex").addEventListener("touchstart", handleEnterTerminal);
+      }
     } else {
       entry.target.classList.remove("inview");
     }
   });
 };
+
 const io = new IntersectionObserver(cb);
 appearElements.forEach(e => io.observe(e));
 
@@ -109,7 +125,9 @@ function trackMouse(event) {
   );
 }
 
-document.addEventListener('mousemove', trackMouse);
+if (window.innerWidth > 768) {
+  document.addEventListener('mousemove', trackMouse);
+}
 
 const scrollDownButton = document.getElementById("hero-bottom-half");
 scrollDownButton.addEventListener("click", (e) => {
