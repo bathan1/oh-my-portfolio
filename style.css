@@ -547,8 +547,8 @@ main #projects-grid {
   background-position-x: left;
 }
 
-#wakeup-img {
-  background-image: url("./assets/images/wakeupapp.png");
+#manga-img {
+  background-image: url("./assets/images/manga-cover-app.png");
   background-position-x: center;
 }
 
@@ -567,7 +567,8 @@ main #projects-grid {
   background-repeat: no-repeat;
   filter: blur(0);
   height: 100%;
-  transition: filter 0.3s ease-in-out;
+  transform: scale(1);
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in;
 }
 
 .project-card .project-blurb {
@@ -583,6 +584,7 @@ main #projects-grid {
 .project-blurb .project-description {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  font-weight: 100;
 }
 
 .action-btn {
@@ -599,15 +601,16 @@ main #projects-grid {
 }
 
 .action-btn:hover {
-  background: #098fc8;
+  background: manga-img
 }
 
 .project-card:hover .project-blurb {
-  height: 80%;
+  height: 40%;
 }
 
 .project-card:hover .project-img {
-  filter:blur(4px);
+  filter: blur(4px);
+  transform: scale(1.1);
 }
 
 .project-card:hover .project-blurb .project-description {
