@@ -628,6 +628,17 @@ main #projects-grid {
   height: 40%;
 }
 
+@media (max-width: 475px) {
+  .project-card:hover .project-blurb {
+    height: 75%;
+  }
+
+  .project-blurb {
+    font-size: 0.6rem;
+    font-weight: 100;
+  }
+}
+
 .project-card:hover .project-img {
   filter: blur(4px);
   transform: scale(1.1);
