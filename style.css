@@ -342,7 +342,7 @@ body #main-nav {
   flex-wrap: wrap;
   max-height: 100%;
 
-  transition: max-height 0.5s ease;
+  transition: max-height 1s ease;
 }
 
 #right-about-card {
@@ -354,7 +354,7 @@ body #main-nav {
   z-index: -5;
   opacity: 0;
 
-  transition: flex-grow 1s ease, opacity 0.8s ease, height 1.2s ease-in;
+  transition: flex-grow 2s ease, opacity 1.6s ease, height 2.4s ease-in;
 }
 
 @media (max-width: 475px) {
