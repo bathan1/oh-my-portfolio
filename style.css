@@ -451,6 +451,12 @@ body #main-nav {
   padding: 1.5rem;
 }
 
+@media (max-width: 475px) {
+  #skills-blurb {
+    font-size: 0.75rem;
+  }
+}
+
 #skills-grid-header {
   grid-column-start: 2;
   grid-column-end: 3;
