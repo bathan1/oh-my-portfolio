@@ -91,7 +91,9 @@ const projectsIo = new IntersectionObserver(active);
 appearProjects.forEach(e => projectsIo.observe(e));
 
 // Smooth scroll
-const lenis = new Lenis();
+const lenis = new Lenis({
+  lerp: 0.1
+});
 
 lenis.on('scroll', (e) => {
 });
@@ -107,7 +109,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
     lenis.scrollTo(this.getAttribute('href'), {
-      offset: -50
+      offset: -100
     });
   });
 });
@@ -131,7 +133,9 @@ if (window.innerWidth > 768) {
 
 const scrollDownButton = document.getElementById("hero-bottom-half");
 scrollDownButton.addEventListener("click", (e) => {
-  lenis.scrollTo(document.getElementById("about-section"));
+  lenis.scrollTo(document.getElementById("about-section"), {
+    offset: -100
+  });
 });
 
 const scrollBackUpButton = document.getElementById("footer-animation");
