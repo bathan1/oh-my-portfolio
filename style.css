@@ -223,8 +223,6 @@ body nav {
   min-height: 85vh;
   display: flex;
   flex-direction: column;
-  margin-bottom: 10rem;
-  padding-top: 5rem;
 }
 
 .compile-prompt {
@@ -476,7 +474,7 @@ body nav {
 
 @media (min-width: 721px) {
   .img {
-    width: 74vmin;
+    width: 64vmin;
     height: 58vmin;
   }
 }
