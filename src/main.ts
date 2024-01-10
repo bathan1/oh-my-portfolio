@@ -1,4 +1,6 @@
 import Typewriter from "typewriter-effect/dist/core";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 let numUserEnterTerminal = 0;
 let terminalPromptFullyDisplay = false;
@@ -100,4 +102,74 @@ if (window.innerWidth > 768) {
   document.addEventListener('mousemove', trackMouse);
 }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const numImages = 7;
+  const minimap = document.querySelector(".minimap .preview");
+  const imageContainer = document.querySelector(".images");
 
+  const getRandomLeft = () => {
+      const values = [-1, -0.5, 0, 0.5, 1];
+      return values[Math.floor(Math.random() * values.length)].toString() + "rem";
+  }
+
+  minimap!.innerHTML = "";
+  imageContainer!.innerHTML = "";
+
+  let activeThumbnail: null | HTMLDivElement = null;
+
+  for (let i = 1; i <= numImages; i++) {
+    const randomLeft = getRandomLeft();
+    const imagePath = `./img${i}.png`;
+
+    const thumbnailDiv = document.createElement("div");
+    thumbnailDiv.className = "img-thumbnail";
+    thumbnailDiv.style.left = randomLeft;
+    const imgThumbnail = document.createElement("img");
+    imgThumbnail.src = imagePath;
+    thumbnailDiv.appendChild(imgThumbnail);
+    minimap!.appendChild(thumbnailDiv);
+    
+    const imgDiv = document.createElement("div");
+    imgDiv.className = "img";
+    const imgFull = document.createElement("img");
+    imgFull.src = imagePath;
+
+    // Need BioMatch image to start from left
+    if (i === 1) {
+      imgThumbnail.classList.add("left-image");
+      imgFull.classList.add("left-image");
+    }
+
+    imgDiv.appendChild(imgFull);
+    imageContainer!.appendChild(imgDiv);
+
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: imgDiv,
+      start: "top center",
+      end: "bottom center",
+      onToggle: self => {
+        if (self.isActive) {
+          if (activeThumbnail && activeThumbnail !== thumbnailDiv) {
+            animateThumbnail(activeThumbnail, false);
+          }
+
+          animateThumbnail(thumbnailDiv, true);
+          activeThumbnail = thumbnailDiv;
+        } else if (activeThumbnail === thumbnailDiv) {
+            animateThumbnail(thumbnailDiv, false);
+        }
+      }
+    });
+  }
+
+  const animateThumbnail = (thumbnail: HTMLDivElement, isActive: boolean) => {
+    gsap.to(thumbnail, {
+    border: isActive ? "1px solid #fff" : "none",
+    opacity: isActive ? 1 : 0.5,
+    scale: isActive ? 1.3 : 1,
+    zIndex: isActive ? 10000 : 1,
+    duration: 0.3
+    });
+  }
+});

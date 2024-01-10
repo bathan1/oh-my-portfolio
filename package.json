@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@studio-freight/lenis": "^1.0.25",
+    "gsap": "^3.12.4",
     "three": "^0.156.1",
     "typewriter-effect": "^2.21.0"
   }
