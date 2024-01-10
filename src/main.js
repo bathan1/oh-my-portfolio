@@ -1,5 +1,4 @@
 import Typewriter from "typewriter-effect/dist/core";
-import Lenis from "@studio-freight/lenis";
 
 let numUserEnterTerminal = 0;
 let terminalPromptFullyDisplay = false;
@@ -90,28 +89,6 @@ const active = (entries) => {
 const projectsIo = new IntersectionObserver(active);
 appearProjects.forEach(e => projectsIo.observe(e));
 
-// Smooth scroll
-const lenis = new Lenis();
-
-lenis.on('scroll', (e) => {
-});
-
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
-
-requestAnimationFrame(raf);
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    lenis.scrollTo(this.getAttribute('href'), {
-      offset: -50
-    });
-  });
-});
-
 function trackMouse(event) {
   const mainElement = document.querySelector("main");
 
@@ -129,12 +106,3 @@ if (window.innerWidth > 768) {
   document.addEventListener('mousemove', trackMouse);
 }
 
-const scrollDownButton = document.getElementById("hero-bottom-half");
-scrollDownButton.addEventListener("click", (e) => {
-  lenis.scrollTo(document.getElementById("about-section"));
-});
-
-const scrollBackUpButton = document.getElementById("footer-animation");
-scrollBackUpButton.addEventListener("click", (e) => {
-  lenis.scrollTo(document.getElementById("hero-section"));
-});
