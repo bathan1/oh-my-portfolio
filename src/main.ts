@@ -2,6 +2,60 @@ import Typewriter from "typewriter-effect/dist/core";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const techs = {
+  1: `
+    <ul class="tech-list">
+      <li>React</li> 
+      <li>MongoDB</li> 
+      <li>Express</li> 
+      <li>Tailwind</li> 
+  </ul>`,
+  2: `
+    <ul class="tech-list">
+      <li>HTML</li> 
+      <li>Tailwind</li> 
+      <li>JavaScript</li> 
+    </ul>
+  `,
+  3: `
+    <ul class="tech-list">
+      <li>HTML</li>
+      <li>Tailwind</li>
+      <li>TypeScript</li>
+    </ul>
+  `,
+  4: `
+    <ul class="tech-list">
+      <li>HTML</li>
+      <li>Tailwind</li>
+      <li>JavaScript</li>
+    </ul>
+  `,
+  5: `
+    <ul class="tech-list">
+      <li>HTML</li>
+      <li>Tailwind</li>
+      <li>JavaScript</li>
+    </ul>
+  `,
+  6: `
+    <ul class="tech-list">
+      <li>React</li>
+      <li>Tailwind</li>
+      <li>Zustand</li>
+      <li>PostgreSQL</li>
+      <li>NestJS</li>
+    </ul>
+  `,
+  7: `
+    <ul class="tech-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+  `,
+}
+
 let numUserEnterTerminal = 0;
 let terminalPromptFullyDisplay = false;
 
@@ -35,7 +89,7 @@ const handleEnterTerminal = (e) => {
         rightAboutCard.style.height = "auto";
       }
       const infoCards = document.querySelectorAll(".info-card");
-      infoCards.forEach((card) => {
+      infoCards.forEach((card: HTMLElement) => {
         card.style.opacity = "1";
       })
 
@@ -50,7 +104,7 @@ const handleEnterTerminal = (e) => {
 
 
 
-function trackMouse(event) {
+function trackMouse(event: MouseEvent) {
   const main = document.querySelector("main"); 
 
   main.style.setProperty(
@@ -98,8 +152,17 @@ document.addEventListener("DOMContentLoaded", () => {
     imgDiv.className = "img";
     imgDiv.classList.add("appear");
   
-    const imgBlurb = document.createElement("div");
-    imgBlurb.className = "img-blurb";
+    const blurbContainer = document.createElement("div");
+    blurbContainer.className = "blurb-container";
+
+    const blurb = document.createElement("p");
+    blurb.innerText = "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+
+    const techDiv = document.createElement("button");
+    techDiv.className = "tech";
+    if (techs[i]) {
+      techDiv.innerHTML = techs[i];
+    }
 
     const imgFull = document.createElement("img");
     imgFull.src = imagePath;
@@ -110,8 +173,12 @@ document.addEventListener("DOMContentLoaded", () => {
       imgFull.classList.add("left-image");
     }
 
+    blurbContainer.appendChild(blurb);
+    blurbContainer.appendChild(techDiv);
+
     imgDiv.appendChild(imgFull);
-    imgDiv.appendChild(imgBlurb);
+    imgDiv.appendChild(blurbContainer);
+
     imageContainer!.appendChild(imgDiv);
 
     gsap.registerPlugin(ScrollTrigger);

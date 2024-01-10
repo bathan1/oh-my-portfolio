@@ -483,19 +483,6 @@ body nav {
   font-weight: 100;
 }
 
-.action-btn {
-  float: right;
-  padding: 0.5rem 1rem;
-  font-family: inherit;
-  background: #0AA0E2;
-  border: 0;
-  color: white;
-  border-radius: 15px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
 .project-card:hover .project-blurb {
   height: 40%;
 }
@@ -629,10 +616,11 @@ body nav {
   transition: filter 0.3s ease-in-out, transform 0.3s ease-in;
 }
 
-.img > .img-blurb {
+.blurb-container {
   position: absolute;
   bottom: 0;
   background: var(--primary);
+  display: flex;
 
   /* Hover animation styles */
   height: 0;
@@ -645,8 +633,21 @@ body nav {
   transform: scale(1.1);
 }
 
-.img:hover .img-blurb {
+.img:hover .blurb-container {
   height: 40%;
+}
+
+.blurb-container > p {
+  flex: 3;
+}
+
+.tech {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  background: var(--accent);
+  border: 0;
+  color: white;
+  font-size: 1.2rem;
 }
 
 .preview > .img-thumbnail > img {
