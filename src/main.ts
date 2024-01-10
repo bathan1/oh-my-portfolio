@@ -97,7 +97,7 @@ function trackMouse(event) {
   );
   mainElement.style.setProperty(
     '--cursorYPos',
-    `${event.clientY}px`
+    `${event.clientY - 50}px`
   );
 }
 
