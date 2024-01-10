@@ -49,50 +49,15 @@ const handleEnterTerminal = (e) => {
 };
 
 
-const appearElements = document.querySelectorAll(".appear");
-const cb = (entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("inview");
-
-      if (entry.target.classList.contains("about-section") && !terminalPromptFullyDisplay) {
-        new Typewriter("#terminal-commander", {
-          strings: "gcc -std=c11 -Wall -Wextra -pedantic about-nathan.c -o nathan.exe",
-          delay: 50,
-          autoStart: true,
-        });
-        terminalPromptFullyDisplay = true;
-      }
-      document.addEventListener("keyup", handleEnterTerminal);
-      if (window.innerWidth < 768) {
-        document.getElementById("terminal-flex").addEventListener("touchstart", handleEnterTerminal);
-      }
-    } 
-  });
-};
-
-const io = new IntersectionObserver(cb);
-appearElements.forEach(e => io.observe(e));
-
-const appearProjects = document.querySelectorAll(".appear-list");
-const active = (entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("inview-list");
-    } 
-  })
-};
-
-const projectsIo = new IntersectionObserver(active);
-appearProjects.forEach(e => projectsIo.observe(e));
 
 function trackMouse(event) {
+  const main = document.querySelector("main"); 
 
-  document.body.style.setProperty(
+  main.style.setProperty(
     '--cursorXPos',
     `${event.clientX}px`
   );
-  document.body.style.setProperty(
+  main.style.setProperty(
     '--cursorYPos',
     `${event.clientY}px`
   );
@@ -131,6 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     const imgDiv = document.createElement("div");
     imgDiv.className = "img";
+    imgDiv.classList.add("appear");
     const imgFull = document.createElement("img");
     imgFull.src = imagePath;
 
@@ -172,4 +138,29 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 0.3
     });
   }
+
+  const appearElements = document.querySelectorAll(".appear");
+  const cb = (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("inview");
+
+        if (entry.target.classList.contains("about-section") && !terminalPromptFullyDisplay) {
+          new Typewriter("#terminal-commander", {
+            strings: "gcc -std=c11 -Wall -Wextra -pedantic about-nathan.c -o nathan.exe",
+            delay: 50,
+            autoStart: true,
+          });
+          terminalPromptFullyDisplay = true;
+        }
+        document.addEventListener("keyup", handleEnterTerminal);
+        if (window.innerWidth < 768) {
+          document.getElementById("terminal-flex").addEventListener("touchstart", handleEnterTerminal);
+        }
+      } 
+    });
+  };
+
+  const io = new IntersectionObserver(cb);
+  appearElements.forEach(e => io.observe(e));
 });
