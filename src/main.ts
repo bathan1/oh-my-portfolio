@@ -3,7 +3,6 @@ import Typewriter from "typewriter-effect/dist/core";
 let numUserEnterTerminal = 0;
 let terminalPromptFullyDisplay = false;
 
-
 const handleEnterTerminal = (e) => {
   if (e.key === "Enter" || e.type === "touchstart") {
     if (numUserEnterTerminal === 0) {
@@ -92,6 +91,9 @@ appearProjects.forEach(e => projectsIo.observe(e));
 function trackMouse(event) {
   const mainElement = document.querySelector("main");
 
+  mainElement.dataset.xPos = `${event.clientX}.px`;
+  mainElement.dataset.yPos = `${event.clientY}.px`;
+
   mainElement.style.setProperty(
     '--cursorXPos',
     `${event.clientX}px`
@@ -105,4 +107,5 @@ function trackMouse(event) {
 if (window.innerWidth > 768) {
   document.addEventListener('mousemove', trackMouse);
 }
+
 

@@ -12,10 +12,10 @@
     <title>Oh My Portfolio</title>
   </head>
   <body>
-    <header class="sticky">
-      <nav id="main-nav">
+    <header class="">
+      <nav>
         <div id="logo-div" class="nav-root-component">
-          <a href="/oh-my-portfolio/" id="logo-span">Oh(n)</a>
+          <a href="#">Oh(n)</a>
         </div>
         <ul id="nav-list-container">
           <li><a href="#about-section" class="page-link">About</a></li>
@@ -47,7 +47,7 @@
       </nav>
     </header>
 
-    <main id="main-content">
+    <main data-x-pos data-y-pos id="main-content">
       <section id="hero-section" class="main-section">
         <div id="main-text-container">
           <h1>Hi, I'm Nathan, and I like to make things on my computer.</h1>
@@ -185,26 +185,19 @@
         </div>
       </section>
 
-      <div class="footer-container appear">
+      <div class="footer-container">
         <div class="footer-line"></div>
         <footer id="footer">
           <div class="build-info">
             <p>
-              This site was written with pure HTML/CSS and 
+              This site was written with pure HTML, CSS, and TypeScript. Bundled with Vite and hosted on GitHub pages, by yours truly.
               <br>
-              scripted with vanilla JavaScript
-              in VSCode. 
-              <br>
-              Dependencies managed by pnpm and bundled with Vite, 
-              <br>
-              with 
-              hosting on GitHub pages.
             </p>
           </div>
         </footer>
       </div>
     </main>
 
-    <script defer src="./src/main.js" type="module"></script>
+    <script defer src="./src/main.ts" type="module"></script>
   </body>
 </html>
