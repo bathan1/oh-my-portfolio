@@ -97,6 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const imgDiv = document.createElement("div");
     imgDiv.className = "img";
     imgDiv.classList.add("appear");
+  
+    const imgBlurb = document.createElement("div");
+    imgBlurb.className = "img-blurb";
+
     const imgFull = document.createElement("img");
     imgFull.src = imagePath;
 
@@ -107,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     imgDiv.appendChild(imgFull);
+    imgDiv.appendChild(imgBlurb);
     imageContainer!.appendChild(imgDiv);
 
     gsap.registerPlugin(ScrollTrigger);

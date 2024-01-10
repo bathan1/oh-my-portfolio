@@ -443,7 +443,6 @@ body nav {
 .project-container {
   display: flex;
   justify-content: space-around;
-  
 }
 
 .project-card {
@@ -495,10 +494,6 @@ body nav {
   font-size: 1.2rem;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-}
-
-.action-btn:hover {
-  background: manga-img
 }
 
 .project-card:hover .project-blurb {
@@ -618,7 +613,7 @@ body nav {
 
 @media (min-width: 720px) {
   .img {
-    width: 96vmin;
+    width: 82vmin;
     height: 58vmin;
   }
 }
@@ -634,9 +629,24 @@ body nav {
   transition: filter 0.3s ease-in-out, transform 0.3s ease-in;
 }
 
+.img > .img-blurb {
+  position: absolute;
+  bottom: 0;
+  background: var(--primary);
+
+  /* Hover animation styles */
+  height: 0;
+  min-width: 100%;
+  transition: height 0.3s ease-in-out;
+}
+
 .img:hover img {
   filter: blur(4px);
   transform: scale(1.1);
+}
+
+.img:hover .img-blurb {
+  height: 40%;
 }
 
 .preview > .img-thumbnail > img {
