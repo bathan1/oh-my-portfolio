@@ -65,9 +65,7 @@ const cb = (entries) => {
       if (window.innerWidth < 768) {
         document.getElementById("terminal-flex").addEventListener("touchstart", handleEnterTerminal);
       }
-    } else {
-      entry.target.classList.remove("inview");
-    }
+    } 
   });
 };
 
@@ -79,9 +77,7 @@ const active = (entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("inview-list");
-    } else {
-      entry.target.classList.remove("inview-list");
-    }
+    } 
   })
 };
 
@@ -89,15 +85,14 @@ const projectsIo = new IntersectionObserver(active);
 appearProjects.forEach(e => projectsIo.observe(e));
 
 function trackMouse(event) {
-  const mainElement = document.querySelector("main");
 
-  mainElement.style.setProperty(
+  document.body.style.setProperty(
     '--cursorXPos',
     `${event.clientX}px`
   );
-  mainElement.style.setProperty(
+  document.body.style.setProperty(
     '--cursorYPos',
-    `${event.clientY - 50}px`
+    `${event.clientY}px`
   );
 }
 
