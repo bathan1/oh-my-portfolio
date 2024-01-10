@@ -91,9 +91,6 @@ appearProjects.forEach(e => projectsIo.observe(e));
 function trackMouse(event) {
   const mainElement = document.querySelector("main");
 
-  mainElement.dataset.xPos = `${event.clientX}.px`;
-  mainElement.dataset.yPos = `${event.clientY}.px`;
-
   mainElement.style.setProperty(
     '--cursorXPos',
     `${event.clientX}px`
