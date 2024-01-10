@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     blurb.innerText = "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
 
     const techDiv = document.createElement("button");
-    techDiv.className = "tech";
+    techDiv.className = "tech-container";
     if (techs[i]) {
       techDiv.innerHTML = techs[i];
     }
