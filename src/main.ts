@@ -104,32 +104,36 @@ const handleEnterTerminal = (e) => {
 
 
 
-function trackMouse(event: MouseEvent) {
-  const main = document.querySelector("main"); 
-
-  main.style.setProperty(
-    '--cursorXPos',
-    `${event.clientX}px`
-  );
-  main.style.setProperty(
-    '--cursorYPos',
-    `${event.clientY}px`
-  );
-}
-
-if (window.innerWidth > 768) {
-  document.addEventListener('mousemove', trackMouse);
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  const numImages = 7;
-  const minimap = document.querySelector(".minimap .preview");
-  const imageContainer = document.querySelector(".images");
+  /**
+    * Used to update the CSS variables in realtime for the flashlight effect
+    * @param {MouseEvent} event: the mouse move event
+  */
+  function trackMouse(event: MouseEvent): void {
+    const main = document.querySelector("main"); 
 
-  const getRandomLeft = () => {
-      const values = [-1, -0.5, 0, 0.5, 1];
-      return values[Math.floor(Math.random() * values.length)].toString() + "rem";
+    main.style.setProperty(
+      '--cursorXPos',
+      `${event.clientX}px`
+    );
+    main.style.setProperty(
+      '--cursorYPos',
+      `${event.clientY}px`
+    );
   }
+
+  // Only add mouse tracking effect if the user is on a big enough screen
+  if (window.innerWidth > 768) {
+    document.addEventListener('mousemove', trackMouse);
+  }
+    const numImages = 7;
+    const minimap = document.querySelector(".minimap .preview");
+    const imageContainer = document.querySelector(".images");
+
+    const getRandomLeft = () => {
+        const values = [-1, -0.5, 0, 0.5, 1];
+        return values[Math.floor(Math.random() * values.length)].toString() + "rem";
+    }
 
   minimap!.innerHTML = "";
   imageContainer!.innerHTML = "";
@@ -191,7 +195,6 @@ document.addEventListener("DOMContentLoaded", () => {
           if (activeThumbnail && activeThumbnail !== thumbnailDiv) {
             animateThumbnail(activeThumbnail, false);
           }
-
           animateThumbnail(thumbnailDiv, true);
           activeThumbnail = thumbnailDiv;
         } else if (activeThumbnail === thumbnailDiv) {
