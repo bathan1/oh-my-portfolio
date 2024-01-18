@@ -2,6 +2,16 @@ import Typewriter from "typewriter-effect/dist/core";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const blurbs = {
+  1: `<a href="#">BioMatch:</a> <br/> a clinical trials app that can be scaled to uniquely match hundreds of users to volunteer for a clinical trial by putting the clients' needs first.`,
+  2: `<a href="#">MangaCoverer:</a> <br/> a full-stack project used to help over 20 students at the UVA art club for inspiration on their manga project.`,
+  3: `<a href="#">Mini-Piano:</a> a satisfying full-octave piano playable on the browser!`,
+  4: `<a href="#">SleepTimerer:</a> <br/> a mobile-first sleep calculator used to help me figure out when to sleep.`,
+  5: `<a href="#">StickyNoter:</a> <br/> a sticky notes app made for intro full-stack development at JHU.`,
+  6: `<a href="#">Flashcarder:</a> <br/> a flash cards app used to help me and my friends study for our finals`,
+  7: `<a href="#">Present-er: </a> <br/> a present for my dad and mom.`
+};
+
 const techs = {
   1: `
     <ul class="tech-list">
@@ -160,9 +170,13 @@ document.addEventListener("DOMContentLoaded", () => {
     blurbContainer.className = "blurb-container";
 
     const blurb = document.createElement("p");
-    blurb.innerText = "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    if (blurbs[i]) {
+      blurb.innerHTML = blurbs[i];
+    } else {
+      blurb.innerText = "Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat."
+    }
 
-    const techDiv = document.createElement("button");
+    const techDiv = document.createElement("div");
     techDiv.className = "tech-container";
     if (techs[i]) {
       techDiv.innerHTML = techs[i];
