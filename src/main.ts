@@ -66,54 +66,6 @@ const techs = {
   `,
 }
 
-let numUserEnterTerminal = 0;
-let terminalPromptFullyDisplay = false;
-
-const handleEnterTerminal = (e) => {
-  if (e.key === "Enter" || e.type === "touchstart") {
-    if (numUserEnterTerminal === 0) {
-      document.getElementById("terminal-commander").textContent = "";
-      new Typewriter("#terminal-commander", {
-        strings: "./nathan.exe",
-        delay: 50,
-        autoStart: true
-      });
-      numUserEnterTerminal++;
-    }  else if (numUserEnterTerminal === 1) {
-
-      const terminalContainer = document.getElementById("terminal-container");
-      const rightAboutCard = document.getElementById("right-about-card");
-      if (window.innerWidth < 768) {
-        terminalContainer.style.opacity = "0";
-        setTimeout(() => {
-          terminalContainer.remove();
-          rightAboutCard.style.flexGrow = "1";
-          rightAboutCard.style.opacity = "1";
-          rightAboutCard.style.height = "100%";
-        }, 1000);
-      } else {
-        document.getElementById("terminal-commander").textContent = "";
-        document.getElementById("terminal-flex").style.gap = "3rem";
-        rightAboutCard.style.flexGrow = "2";
-        rightAboutCard.style.opacity = "1";
-        rightAboutCard.style.height = "auto";
-      }
-      const infoCards = document.querySelectorAll(".info-card");
-      infoCards.forEach((card: HTMLElement) => {
-        card.style.opacity = "1";
-      })
-
-      numUserEnterTerminal++;
-      new Typewriter("#terminal-commander", {
-        strings: "",
-        delay: 50,
-      });
-    }
-  } 
-};
-
-
-
 document.addEventListener("DOMContentLoaded", () => {
   /**
     * Used to update the CSS variables in realtime for the flashlight effect
@@ -232,18 +184,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         entry.target.classList.add("inview");
 
-        if (entry.target.id === "about-section" && !terminalPromptFullyDisplay) {
-          new Typewriter("#terminal-commander", {
-            strings: "make all",
-            delay: 50,
-            autoStart: true,
+        if (entry.target.id === "about-section") {
+          const typewriter = new Typewriter("#terminal-commander", {
+            delay: 75,
           });
-          terminalPromptFullyDisplay = true;
+          typewriter
+            .typeString("make all")
+            .start();
         }
-        document.addEventListener("keyup", handleEnterTerminal);
-        if (window.innerWidth < 768) {
-          document.getElementById("terminal-flex").addEventListener("touchstart", handleEnterTerminal);
-        }
+
       } 
     });
   };
