@@ -218,9 +218,10 @@ body nav {
 
 /* About section styles */
 #about-section {
-  min-height: 85vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .compile-prompt {
@@ -237,11 +238,11 @@ body nav {
 }
 
 #terminal-flex {
-  flex: 1;
+  flex: 3;
   box-shadow: 10px 10px 36px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   flex-wrap: wrap;
-  max-height: 100%;
+  width: 70%;
 
   transition: max-height 1s ease;
 }
@@ -554,7 +555,7 @@ body nav {
   text-align: center;
   padding: 6px;
   font-size: 0.75rem;
-
+  cursor: default;
   background-color: var(--background);
 }
 

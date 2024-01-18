@@ -232,9 +232,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (entry.isIntersecting) {
         entry.target.classList.add("inview");
 
-        if (entry.target.classList.contains("about-section") && !terminalPromptFullyDisplay) {
+        if (entry.target.id === "about-section" && !terminalPromptFullyDisplay) {
           new Typewriter("#terminal-commander", {
-            strings: "gcc -std=c11 -Wall -Wextra -pedantic about-nathan.c -o nathan.exe",
+            strings: "make all",
             delay: 50,
             autoStart: true,
           });
