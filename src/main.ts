@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const blurbs = {
-  1: `<a href="#">BioMatch:</a> <br/> a clinical trials app that can be scaled to uniquely match hundreds of users to volunteer for a clinical trial by putting the clients' needs first.`,
+  1: `<a href="#">BioMatch:</a> <br/> a clinical trials app that can be scaled to uniquely match hundreds of users to volunteer for a clinical trial.`,
   2: `<a href="#">MangaCoverer:</a> <br/> a full-stack project used to help over 20 students at the UVA art club for inspiration on their manga project.`,
   3: `<a href="#">Mini-Piano:</a> a satisfying full-octave piano playable on the browser!`,
   4: `<a href="#">SleepTimerer:</a> <br/> a mobile-first sleep calculator used to help me figure out when to sleep.`,

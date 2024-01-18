@@ -495,7 +495,6 @@ body nav {
 
   /* Hover animation styles */
   height: 0;
-  min-width: 100%;
   transition: height 0.3s ease-in-out;
 }
 
@@ -510,6 +509,10 @@ body nav {
 
 .blurb-container > p {
   flex: 3;
+}
+
+.tech-container {
+  flex: 1;
 }
 
 .preview > .img-thumbnail > img {
@@ -534,16 +537,21 @@ body nav {
 .tech-list {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .tech-list > li {
+  width: fit-content;
+  height: fit-content;
   border: 1.5px solid var(--accent);
-  border-radius: 10px;
+  border-radius: 9999px;
   text-align: center;
-  padding: 4px;
+  padding: 6px;
+  font-size: 0.75rem;
 }
 
 .blurb-container a {
   font-size: 1.3rem;
 }
+
