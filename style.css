@@ -4,6 +4,7 @@
 /* font-family: "Poppins", sans-serif; */
 :root {
   --text: #f0e9e9;
+  --alt-text: #ada8a8;
   --background: #0f0f0f;
   --primary: #881717;
   --secondary: #991212;
@@ -15,6 +16,7 @@
 
   margin: 0px;
   height: 100%;
+  box-sizing: border-box;
 }
 
 h1, h2, h3, p {
@@ -488,13 +490,14 @@ body nav {
 
 .blurb-container {
   position: absolute;
-  padding: 4px;
-  bottom: 0;
+  padding: 16px;
+  bottom: 0%;
   background: var(--primary);
   display: flex;
 
   /* Hover animation styles */
   height: 0;
+  width: 100%; /* i have fuckin clue what is going on here with the widths but whatever maybe u can fix it later */
   transition: height 0.3s ease-in-out;
 }
 
@@ -509,6 +512,8 @@ body nav {
 
 .blurb-container > p {
   flex: 3;
+
+  color: var(--alt-text);
 }
 
 .tech-container {
@@ -549,9 +554,11 @@ body nav {
   text-align: center;
   padding: 6px;
   font-size: 0.75rem;
+
+  background-color: var(--background);
 }
 
 .blurb-container a {
-  font-size: 1.3rem;
+  font-size: 2rem;
 }
 
