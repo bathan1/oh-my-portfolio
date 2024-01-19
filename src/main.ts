@@ -183,20 +183,25 @@ document.addEventListener("DOMContentLoaded", () => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("inview");
-
-        if (entry.target.id === "about-section") {
-          const typewriter = new Typewriter("#terminal-commander", {
-            delay: 75,
-          });
-          typewriter
-            .typeString("make all")
-            .start();
-        }
-
       } 
     });
   };
 
   const io = new IntersectionObserver(cb);
   appearElements.forEach(e => io.observe(e));
+
+  
+  const handleContactSpanClick = () => {
+    document.execCommand("copy");
+  }
+
+  const contactSpan = document.getElementById("contact-anchor");
+  contactSpan.onclick = handleContactSpanClick;
+  contactSpan.addEventListener("copy", (e) => {
+    e.preventDefault();  
+    if (e.clipboardData) {
+      e.clipboardData.setData("text/plain", contactSpan.textContent);
+    }
+  });
 });
+

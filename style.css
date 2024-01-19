@@ -223,7 +223,21 @@ body nav {
 
 #about-section > h1 {
   font-size: 2rem;
-  padding: 8px;
+  padding: 16px;
+}
+
+#about-section > p {
+  padding: 16px;
+  line-height: 175%;
+}
+
+#about-section a {
+  cursor: pointer;
+}
+
+#about-section span {
+  cursor: pointer;
+  color: var(--text);
 }
 
 /* Footer style */
