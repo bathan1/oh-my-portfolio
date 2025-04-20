@@ -54,7 +54,8 @@ export function FeatureSqlShell() {
     >
       <Box textAlign="center" my="8">
         <Heading size="7xl">Featured Project: <Text as="span" color="orange">Medfetch.js</Text></Heading>
-        <Text color="gray" fontSize="xl">Pull <Link>FHIR</Link> data and flatten it directly from your browser with SQLite!</Text>
+        <Text color="gray-600" fontSize="2xl">Pull <Link>FHIR</Link> data and flatten it directly from your browser with SQLite!</Text>
+        <Text color="gray" fontSize="sm">Write in any SQL query and hit run to get your results!</Text>
       </Box>
       <Box
         w="full"
